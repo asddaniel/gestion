@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+      
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+        <!-- themify icon -->
+        <link rel="stylesheet" type="text/css" href="assets/icon/themify-icons/themify-icons.css">
+        <!-- ico font -->
+        <link rel="stylesheet" type="text/css" href="assets/icon/icofont/css/icofont.css">
+        <!-- flag icon framework css -->
+        <link rel="stylesheet" type="text/css" href="assets/pages/flag-icon/flag-icon.min.css">
+        <!--SVG Icons Animated-->
+        <link rel="stylesheet" type="text/css" href="assets/icon/SVG-animated/svg-weather.css">
+        <!-- Menu-Search css -->
+        <link rel="stylesheet" type="text/css" href="assets/pages/menu-search/css/component.css">
+        <!-- Horizontal-Timeline css -->
+        <link rel="stylesheet" type="text/css" href="assets/pages/dashboard/horizontal-timeline/css/style.css">
+        <!-- amchart css -->
+        <link rel="stylesheet" type="text/css" href="assets/pages/dashboard/amchart/css/amchart.css">
+        <!-- Calender css -->
+        <link rel="stylesheet" type="text/css" href="assets/pages/widget/calender/pignose.calendar.min.css">
+        <!-- flag icon framework css -->
+        <link rel="stylesheet" type="text/css" href="assets/pages/flag-icon/flag-icon.min.css">
+        <!-- Style.css -->
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <!--color css-->
+  
+  
+        <link rel="stylesheet" type="text/css" href="assets/css/linearicons.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/simple-line-icons.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/ionicons.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/jquery.mCustomScrollbar.css">
+  
+        <link rel="stylesheet" href="css/index.css">
+        <title>Hello World</title>
+    </head>
+    <body>
+        
+
+
+
+            <!-- Pre-loader start -->
+    <div class="theme-loader">
+        <div class="ball-scale">
+            <div></div>
+        </div>
+    </div>
+    <!-- Pre-loader end -->
+    <!-- Menu header start -->
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+            <nav class="navbar header-navbar pcoded-header">
+                <div class="navbar-wrapper">
+                    <div class="navbar-logo" data-navbar-theme="theme4">
+                        <a class="mobile-menu" id="mobile-collapse" href="#!">
+                            <i class="ti-menu"></i>
+                        </a>
+                        <a class="mobile-search morphsearch-search" href="#">
+                            <i class="ti-search"></i>
+                        </a>
+                        <a href="index.html">
+                           
+                        </a>
+                        <a class="mobile-options">
+                            <i class="ti-more"></i>
+                        </a>
+                    </div>
+                    <div class="navbar-container container-fluid">
+                        <div>
+                            <ul class="nav-left">
+                                <li>
+                                    <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a></div>
+                                </li>
+                                <li>
+                                    <a class="main-search morphsearch-search" href="#">
+                                        <!-- themify icon -->
+                                        <i class="ti-search"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#!" onclick="javascript:toggleFullScreen()">
+                                        <i class="ti-fullscreen"></i>
+                                    </a>
+                                </li>
+                               
+                            </ul>
+                            <ul class="nav-right">
+                              
+                                
+                            </ul>
+                            <!-- search -->
+                            <div id="morphsearch" class="morphsearch">
+                                <form class="morphsearch-form">
+                                    <input class="morphsearch-input" type="search" placeholder="Search...">
+                                    <button class="morphsearch-submit" type="submit">Search</button>
+                                </form>
+                                <div class="morphsearch-content">
+                                    <div class="dummy-column">
+                                        <h2>People</h2>
+                                        <a class="dummy-media-object" href="#!">
+                                            <img class="round" src="../../../../avatar/81b58502541f9445253f30497e53c280.png?s=50&d=identicon&r=G" alt="Sara Soueidan">
+                                            <h3>Sara Soueidan</h3>
+                                        </a>
+                                        <a class="dummy-media-object" href="#!">
+                                            <img class="round" src="../../../../avatar/9bc7250110c667cd35c0826059b81b75.jpeg?s=50&d=identicon&r=G" alt="Shaun Dona">
+                                            <h3>Shaun Dona</h3>
+                                        </a>
+                                    </div>
+                                    <div class="dummy-column">
+                                        <h2>Popular</h2>
+                                        <a class="dummy-media-object" href="#!">
+                                            <img src="assets/images/avatar-1.png" alt="PagePreloadingEffect">
+                                            <h3>Page Preloading Effect</h3>
+                                        </a>
+                                        <a class="dummy-media-object" href="#!">
+                                            <img src="assets/images/avatar-1.png" alt="DraggableDualViewSlideshow">
+                                            <h3>Draggable Dual-View Slideshow</h3>
+                                        </a>
+                                    </div>
+                                    <div class="dummy-column">
+                                        <h2>Recent</h2>
+                                        <a class="dummy-media-object" href="#!">
+                                            <img src="assets/images/avatar-1.png" alt="TooltipStylesInspiration">
+                                            <h3>Tooltip Styles Inspiration</h3>
+                                        </a>
+                                        <a class="dummy-media-object" href="#!">
+                                            <img src="assets/images/avatar-1.png" alt="NotificationStyles">
+                                            <h3>Notification Styles Inspiration</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- /morphsearch-content -->
+                                <span class="morphsearch-close"><i class="icofont icofont-search-alt-1"></i></span>
+                            </div>
+                            <!-- search end -->
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+           
+           
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+                    <nav class="pcoded-navbar transitive">
+                        <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
+                        <div class="pcoded-inner-navbar main-menu">
+
+                            <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Navigation</div>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="pcoded-hasmenu active pcoded-trigger">
+                                    <a href="javascript:void(0)">
+                                        <span class="pcoded-micon"><i class="ti-home"></i></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class="active">
+                                            <a href="index.html">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.dash.default">Commande</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="dashboard-ecommerce.html">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.dash.ecommerce">Clients</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                      
+                                </li>
+                               
+                               
+                               
+                            </ul>
+                           
+                            
+                        </div>
+                    </nav>
+                    <div class="pcoded-content">
+                        <div class="pcoded-inner-content">
+                            <div class="main-body">
+                                <div class="page-wrapper">
+                                    <div class="page-header">
+                                        <div class="page-header-title">
+                                            <h4>Tableau de bord</h4>
+                                        </div>
+                                        <div class="page-header-breadcrumb">
+                                            <ul class="breadcrumb-title">
+                                                <li class="breadcrumb-item">
+                                                    <a href="index.html">
+                                                        <i class="icofont icofont-home"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="breadcrumb-item"><a href="#!">Pages</a>
+                                                </li>
+                                                <li class="breadcrumb-item"><a href="#!">Dashboard</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="page-body">
+                                        
+                                           
+
+                                           
+
+
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h5>CLIENTS</h5>
+                                                    <div class="card-header-right">
+                                                        <i class="icofont icofont-rounded-down"></i>
+                                                        <i class="icofont icofont-refresh"></i>
+                                                        <i class="icofont icofont-close-circled"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="card-block">
+                                                    <div class="row">
+                                                        <!-- Product table Start -->
+                                            <div class="col-md-8">
+                                                <div class="card">
+                                                    <div class="card-block">
+                                                        <h5>Clients</h5>
+                                                    </div>
+                                                    <div class="card-block product-table">
+                                                        <div class="table-responsive">
+                                                            <table class="table">
+                                                                <thead>
+                                                                    <tr class="text-uppercase">
+                                                                        <th>Nom</th>
+                                                                        <th>Sexe</th>
+                                                                        <th>Telephone</th>
+                                                                        <th></th>
+                                                                        
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>1. Daniela Dawa</td>
+                                                                        <td>F</td>
+                                                                        <td>0813309349</td>
+                                                                        <td><button type="button" class="btn btn-primary">voir</button></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>2. Papa Faustin</td>
+                                                                        <td>M</td>
+                                                                        <td>0899687664</td>
+                                                                        <td><button type="button" class="btn btn-primary">voir</button></td>
+                                                                  </tr>
+                                                                   
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Product table End -->
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                          
+                                          
+
+                                          
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h5>COMMANDES</h5>
+                                                    <div class="card-header-right">
+                                                        <i class="icofont icofont-rounded-down"></i>
+                                                        <i class="icofont icofont-refresh"></i>
+                                                        <i class="icofont icofont-close-circled"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="card-block">
+                                            <!-- Reset Order Start -->
+                                            <div class="col-md-12">
+                                                <div class="card">
+                                                    <div class="card-block">
+                                                        <h5>Commandes</h5>
+                                                    </div>
+                                                    <div class="card-block reset-table p-t-0">
+                                                        <div class="table-responsive">
+                                                            <table class="table">
+                                                                <thead>
+                                                                    <tr class="text-uppercase">
+                                                                        <th>Image</th>
+                                                                        <th>Libelle</th>
+                                                                        <th>Modeles</th>
+                                                                        <th>pieces</th>
+                                                                        <th>Status de paiement</th>
+                                                                        <th>Arrivée</th>
+                                                                        <th>Date de Livraison</th>
+                                                                        <th>Prix</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td><a href="#!"><img class="img-responsive" src="assets/images/widget/prod1.jpg" alt="chat-user"></a>
+                                                                        </td>
+                                                                        <td>2h4C41</td>
+                                                                        <td>Chemise W-3</td>
+                                                                        <td>Super Wax</td>
+                                                                        <td><button type="button" class="btn btn-success btn-round">Payé</button></td>
+                                                                        <td>27 Sep 2022</td>
+                                                                        <td>30/12/2022</td>
+                                                                        <td>$99.00</td>
+                                                                    </tr>
+                                                                  
+                                                                   
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Reset Order End -->
+                                        </div>
+                                            </div>
+
+                                        
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Required Jqurey -->
+<script type="text/javascript" src="bower_components/jquery/js/jquery.min.js"></script>
+<script src="bower_components/jquery-ui/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="bower_components/popper.js/js/popper.min.js"></script>
+<script type="text/javascript" src="bower_components/bootstrap/js/bootstrap.min.js"></script>
+<!-- jquery slimscroll js -->
+<script type="text/javascript" src="bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
+<!-- modernizr js -->
+<script type="text/javascript" src="bower_components/modernizr/js/modernizr.js"></script>
+<script type="text/javascript" src="bower_components/modernizr/js/css-scrollbars.js"></script>
+<!-- Calender js -->
+<script type="text/javascript" src="bower_components/moment/js/moment.min.js"></script>
+<script type="text/javascript" src="assets/pages/widget/calender/pignose.calendar.min.js"></script>
+<!-- classie js -->
+
+<script type="text/javascript" src="bower_components/classie/js/classie.js"></script>
+<!-- knob js -->
+<script src="assets/pages/chart/knob/jquery.knob.js"></script>
+<script type="text/javascript" src="assets/pages/widget/jquery.sparkline.js"></script>
+
+    <!-- Horizontal-Timeline js -->
+<script type="text/javascript" src="assets/pages/dashboard/horizontal-timeline/js/main.js"></script>
+
+<!-- i18next.min.js -->
+<script type="text/javascript" src="bower_components/i18next/js/i18next.min.js"></script>
+<script type="text/javascript" src="bower_components/i18next-xhr-backend/js/i18nextXHRBackend.min.js"></script>
+<script type="text/javascript" src="bower_components/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js"></script>
+<script type="text/javascript" src="bower_components/jquery-i18next/js/jquery-i18next.min.js"></script>
+<!-- Custom js -->
+<script type="text/javascript" src="assets/pages/dashboard/custom-dashboard.js"></script>
+<script type="text/javascript" src="assets/js/script.js"></script>
+
+<!-- pcmenu js -->
+<script src="assets/js/pcoded.min.js"></script>
+<script src="assets/js/demo-12.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/jquery.mousewheel.min.js"></script>
+
+
+
+
+
+
+
+        <script src="cordova.js"></script>
+        <script src="js/index.js"></script>
+      
+    </body>
+</html>
