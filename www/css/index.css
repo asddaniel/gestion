@@ -36,6 +36,19 @@ body {
 .transitive{
     transition: all 0.5s ease-in-out;
 }
+.blur{
+    filter: blur(5px);
+
+}
+.mi-sombre{
+    background-color: #34495E;
+    color: white;
+}
+@media screen and (max-width: 1200px) {
+ .plein-ecran{
+    min-width: 85vw!important;
+ }    
+}
 
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
@@ -55,7 +68,10 @@ h1 {
     padding:0px;
     text-align:center;
 }
-
+.flex{
+    margin-top: 2vh;
+    display: flex;
+}
 .event {
     border-radius:4px;
     color:#FFFFFF;

@@ -33,6 +33,7 @@ var ModalEffects = (function() {
 
 			el.addEventListener( 'click', function( ev ) {
 				classie.add( modal, 'md-show' );
+				document.querySelector('.pcoded-main-container').classList.toggle('blur')
 				overlay.removeEventListener( 'click', removeModalHandler );
 				overlay.addEventListener( 'click', removeModalHandler );
 
@@ -44,6 +45,7 @@ var ModalEffects = (function() {
 			});
 
 			close.addEventListener( 'click', function( ev ) {
+				document.querySelector('.pcoded-main-container').classList.toggle('blur')
 				ev.stopPropagation();
 				removeModalHandler();
 			});

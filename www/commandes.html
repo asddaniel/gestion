@@ -27,7 +27,6 @@
         <link rel="stylesheet" type="text/css" href="assets/pages/widget/calender/pignose.calendar.min.css">
         <!-- flag icon framework css -->
         <link rel="stylesheet" type="text/css" href="assets/pages/flag-icon/flag-icon.min.css">
-        <link rel="stylesheet" href="css/sweetalert2.css">
         <!-- Style.css -->
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
         <!--color css-->
@@ -37,8 +36,6 @@
         <link rel="stylesheet" type="text/css" href="assets/css/simple-line-icons.css">
         <link rel="stylesheet" type="text/css" href="assets/css/ionicons.css">
         <link rel="stylesheet" type="text/css" href="assets/css/jquery.mCustomScrollbar.css">
-          <!-- animation nifty modal window effects css -->
-      <link rel="stylesheet" type="text/css" href="assets/css/component.css">
   
         <link rel="stylesheet" href="css/index.css">
         <title>Hello World</title>
@@ -91,10 +88,6 @@
                                     <a href="#!" onclick="javascript:toggleFullScreen()">
                                         <i class="ti-fullscreen"></i>
                                     </a>
-                                </li>
-                                <li>
-                                    
-                                    
                                 </li>
                                
                             </ul>
@@ -201,12 +194,6 @@
                                         <div class="page-header-title">
                                             <h4>Tableau de bord</h4>
                                         </div>
-                                        
-
-
-
-
-
                                         <div class="page-header-breadcrumb">
                                             <ul class="breadcrumb-title">
                                                 <li class="breadcrumb-item">
@@ -231,14 +218,11 @@
                                             <div class="card">
                                                 <div class="card-header">
                                                     <h5>CLIENTS</h5>
-                                                      
                                                     <div class="card-header-right">
                                                         <i class="icofont icofont-rounded-down"></i>
                                                         <i class="icofont icofont-refresh"></i>
                                                         <i class="icofont icofont-close-circled"></i>
                                                     </div>
-                                                    
-                                                           
                                                 </div>
                                                 <div class="card-block">
                                                     <div class="row">
@@ -246,11 +230,8 @@
                                             <div class="col-md-8">
                                                 <div class="card">
                                                     <div class="card-block">
-                                                        
-                                                        <button type="button" class="btn btn-primary  waves-effect md-trigger" data-modal="modal-10">Ajouter un client</button>
-                                                        <div class="md-overlay"></div>
+                                                        <h5>Clients</h5>
                                                     </div>
-                                                   
                                                     <div class="card-block product-table">
                                                         <div class="table-responsive">
                                                             <table class="table">
@@ -263,20 +244,18 @@
                                                                         
                                                                     </tr>
                                                                 </thead>
-                                                                <tbody id="client-tab">
+                                                                <tbody>
                                                                     <tr>
                                                                         <td>1. Daniela Dawa</td>
                                                                         <td>F</td>
                                                                         <td>0813309349</td>
                                                                         <td><button type="button" class="btn btn-primary">voir</button></td>
-                                                                        <td><button type="button" class="btn btn-primary action-delete">Supprimer</button></td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>2. Papa Faustin</td>
                                                                         <td>M</td>
                                                                         <td>0899687664</td>
                                                                         <td><button type="button" class="btn btn-primary">voir</button></td>
-                                                                        <td><button type="button" class="btn btn-primary">Supprimer</button></td>
                                                                   </tr>
                                                                    
                                                                 </tbody>
@@ -362,60 +341,7 @@
             </div>
         </div>
     </div>
-   <!-- modal -->
-    <div class="md-modal md-effect-10 container plein-ecran" id="modal-10">
-        <div class="md-content mi-sombre">
-            <h3 class="bg-primary">Ajouter un client</h3>
-            <div>
-              
-                <ul>
-                    <form name="add_client">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div>
-                                    <label class="form-control-label">Nom</label>
-                                    <input type="text" name="nom" class="form-control" placeholder="Entrer le nom du client" required>
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            
-                            <div class="col-sm-12">
-                                <div>
-                                <label class="form-control-label">Sexe</label>
-                            </div>
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="genre" id="gender-1" value="M" checked> Homme
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="genre" id="gender-2" value="F"> Femme
-                                    </label>
-                                </div>
-                                <span class="messages"></span>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div>
-                                    <label class="form-control-label">Telephone</label>
-                                    <input type="text" name="telephone" class="form-control" placeholder="Entrer le numéro de telephone" required>
-                                </div>
-                            </div>
-                        </div>
-                     <div class="flex">
-      <button class="btn btn-primary waves-effect md-close">Enregistrer</button>
-      <div type="button" class="btn btn-primary waves-effect md-close">Fermer</div>  </div>        
-                    </form>
-                </ul>
-                
-            </div>
-        </div>
-    </div>
+
 
 <!-- Required Jqurey -->
 <script type="text/javascript" src="bower_components/jquery/js/jquery.min.js"></script>
@@ -448,8 +374,7 @@
 <!-- Custom js -->
 <script type="text/javascript" src="assets/pages/dashboard/custom-dashboard.js"></script>
 <script type="text/javascript" src="assets/js/script.js"></script>
-<script type="text/javascript" src="assets/js/modalEffects.js"></script>
-<script type="text/javascript" src="assets/js/classie.js"></script>
+
 <!-- pcmenu js -->
 <script src="assets/js/pcoded.min.js"></script>
 <script src="assets/js/demo-12.js"></script>
@@ -464,9 +389,6 @@
 
         <script src="cordova.js"></script>
         <script src="js/index.js"></script>
-        <script src="js/sweetalert2.all.min.js"></script>
-        <script src="assets/js/app.js"></script>
-        
       
     </body>
 </html>
