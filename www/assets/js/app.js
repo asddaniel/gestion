@@ -10,6 +10,27 @@ class Client{
         memory.setItem('clients', JSON.stringify(old));
         this.clients = JSON.parse(memory.getItem('clients'))
     }
+    update(value, id){
+        
+        for(let i=0; i<this.clients.clients.length; i++){
+            if(parseInt(id)==i){
+                this.clients.clients[id]=value;
+            }
+        }
+        let old = this.clients;
+        memory.setItem('clients', JSON.stringify(old));
+        
+
+        
+    }
+    get(id){
+        for(let i=0; i<this.clients.clients.length; i++){
+            if(parseInt(id)==i){
+                return this.clients.clients[id];
+            }
+        }
+        return false;
+    }
     remove(id){
         let all = []
         
@@ -39,6 +60,7 @@ class Client{
             news.childNodes[5].textContent = ''+this.clients.clients[i].telephone;
             console.log(news.childNodes[9].childNodes)
             news.childNodes[9].childNodes[0].setAttribute('data-id', i);
+            news.childNodes[11].childNodes[0].setAttribute('data-id-update', i);
             //console.log(news.childNodes[7].innerHTML)
             document.getElementById('client-tab').appendChild(news)
         }
@@ -92,6 +114,43 @@ if(document.add_client){
        
         
     })
+// update 
+
+document.modify_client.addEventListener('submit', function(e){
+    e.preventDefault();
+    console.log(this.elements)
+    let client={};
+    for(let i=0; i<this.elements.length; i++){
+        if(this.elements[i].type!='submit' && this.elements[i].name!='id'){
+            let named = this.elements[i].name
+            console.log(this.elements[named])
+           client[this.elements[i].name]=this.elements[named].value;
+        }
+        
+    }
+    clients.update(client, this.id.value)
+   let reussite =  new Promise(function(resolve, reject){
+    Swal.fire(
+        'Effectué',
+        'Client enregistré!',
+        'success');
+        setTimeout(function(){
+            resolve();
+        }, 2000)
+        
+
+      
+      })
+      reussite.then(function(e){
+        window.location.reload()
+      })
+   
+    
+})
+
+
+
+
 
     let action_delete = document.querySelectorAll('.action-delete');
     for(let i=0; i<action_delete.length; i++){

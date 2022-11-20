@@ -18,6 +18,7 @@ var ModalEffects = (function() {
 
 			var modal = document.querySelector( '#' + el.getAttribute( 'data-modal' ) ),
 				close = modal.querySelector( '.md-close' );
+				let fermer = modal.querySelector('.md-fermer')
 
 			function removeModal( hasPerspective ) {
 				classie.remove( modal, 'md-show' );
@@ -36,6 +37,14 @@ var ModalEffects = (function() {
 				document.querySelector('.pcoded-main-container').classList.toggle('blur')
 				overlay.removeEventListener( 'click', removeModalHandler );
 				overlay.addEventListener( 'click', removeModalHandler );
+				if(this.hasAttribute('data-id-update')){
+					data_client = clients.get(this.getAttribute('data-id-update'))
+					document.modify_client.nom.value = data_client.nom;
+					document.modify_client.telephone.value = data_client.telephone;
+					document.modify_client.id.value = this.getAttribute('data-id-update');
+					console.log(data_client)
+				}
+				
 
 				if( classie.has( el, 'md-setperspective' ) ) {
 					setTimeout( function() {
@@ -45,7 +54,12 @@ var ModalEffects = (function() {
 			});
 
 			close.addEventListener( 'click', function( ev ) {
-				document.querySelector('.pcoded-main-container').classList.toggle('blur')
+				document.querySelector('.pcoded-main-container').classList.remove('blur')
+				ev.stopPropagation();
+				removeModalHandler();
+			});
+			fermer.addEventListener( 'click', function( ev ) {
+				document.querySelector('.pcoded-main-container').classList.remove('blur')
 				ev.stopPropagation();
 				removeModalHandler();
 			});

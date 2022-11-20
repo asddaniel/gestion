@@ -270,6 +270,8 @@
                                                                         <td>0813309349</td>
                                                                         <td><button type="button" class="btn btn-primary">voir</button></td>
                                                                         <td><button type="button" class="btn btn-primary action-delete">Supprimer</button></td>
+                                                                        
+                                                                        <td><button type="button" class="btn btn-primary action-update waves-effect md-trigger" data-modal="modal-9" >modifier</button></td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>2. Papa Faustin</td>
@@ -277,6 +279,7 @@
                                                                         <td>0899687664</td>
                                                                         <td><button type="button" class="btn btn-primary">voir</button></td>
                                                                         <td><button type="button" class="btn btn-primary">Supprimer</button></td>
+                                                                        <td><button type="button" class="btn btn-primary">Modifier</button></td>
                                                                   </tr>
                                                                    
                                                                 </tbody>
@@ -409,13 +412,69 @@
                         </div>
                      <div class="flex">
       <button class="btn btn-primary waves-effect md-close">Enregistrer</button>
-      <div type="button" class="btn btn-primary waves-effect md-close">Fermer</div>  </div>        
+      <div type="button" class="btn btn-primary waves-effect md-fermer">Fermer</div>  </div>        
                     </form>
                 </ul>
                 
             </div>
         </div>
     </div>
+
+    <div class="md-modal md-effect-9 container plein-ecran" id="modal-9">
+        <div class="md-content mi-sombre">
+            <h3 class="bg-primary">Ajouter un client</h3>
+            <div>
+              
+                <ul>
+                    <form name="modify_client">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div>
+                                    <label class="form-control-label">Nom</label>
+                                    <input type="text" name="nom" class="form-control" placeholder="Entrer le nom du client" required>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            
+                            <div class="col-sm-12">
+                                <div>
+                                <label class="form-control-label">Sexe</label>
+                            </div>
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="genre" id="gender-1" value="M" checked> Homme
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="genre" id="gender-2" value="F"> Femme
+                                    </label>
+                                </div>
+                                <span class="messages"></span>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div>
+                                    <input type="hidden" name="id" value="">
+                                    <label class="form-control-label">Telephone</label>
+                                    <input type="text" name="telephone" class="form-control" placeholder="Entrer le numéro de telephone" required>
+                                </div>
+                            </div>
+                        </div>
+                     <div class="flex">
+      <button class="btn btn-primary waves-effect md-close">Enregistrer</button>
+      <div type="button" class="btn btn-primary waves-effect md-fermer">Fermer</div>  </div>        
+                    </form>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+
 
 <!-- Required Jqurey -->
 <script type="text/javascript" src="bower_components/jquery/js/jquery.min.js"></script>
@@ -445,11 +504,7 @@
 <script type="text/javascript" src="bower_components/i18next-xhr-backend/js/i18nextXHRBackend.min.js"></script>
 <script type="text/javascript" src="bower_components/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js"></script>
 <script type="text/javascript" src="bower_components/jquery-i18next/js/jquery-i18next.min.js"></script>
-<!-- Custom js -->
-<script type="text/javascript" src="assets/pages/dashboard/custom-dashboard.js"></script>
-<script type="text/javascript" src="assets/js/script.js"></script>
-<script type="text/javascript" src="assets/js/modalEffects.js"></script>
-<script type="text/javascript" src="assets/js/classie.js"></script>
+
 <!-- pcmenu js -->
 <script src="assets/js/pcoded.min.js"></script>
 <script src="assets/js/demo-12.js"></script>
@@ -466,6 +521,11 @@
         <script src="js/index.js"></script>
         <script src="js/sweetalert2.all.min.js"></script>
         <script src="assets/js/app.js"></script>
+        <!-- Custom js -->
+<script type="text/javascript" src="assets/pages/dashboard/custom-dashboard.js"></script>
+<script type="text/javascript" src="assets/js/script.js"></script>
+<script type="text/javascript" src="assets/js/modalEffects.js"></script>
+<script type="text/javascript" src="assets/js/classie.js"></script>
         
       
     </body>
