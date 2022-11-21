@@ -39,10 +39,17 @@ var ModalEffects = (function() {
 				overlay.addEventListener( 'click', removeModalHandler );
 				if(this.hasAttribute('data-id-update')){
 					data_client = clients.get(this.getAttribute('data-id-update'))
+					
 					document.modify_client.nom.value = data_client.nom;
 					document.modify_client.telephone.value = data_client.telephone;
 					document.modify_client.id.value = this.getAttribute('data-id-update');
-					console.log(data_client)
+					
+				}
+				if(this.hasAttribute('data-id-update-commande')){
+					parse_commande(this.getAttribute('data-id-update-commande'));
+				}
+				if(this.getAttribute('action')=="add-commande"){
+					parse_client();
 				}
 				
 
