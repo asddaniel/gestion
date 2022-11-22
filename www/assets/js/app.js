@@ -10,6 +10,9 @@ class Client{
         memory.setItem('clients', JSON.stringify(old));
         this.clients = JSON.parse(memory.getItem('clients'))
     }
+    search(term){
+        return this.clients.clients.filter(most_client=>most_client.nom.search(term)!=-1)
+    }
     update(value, id){
         
         for(let i=0; i<this.clients.clients.length; i++){
@@ -79,6 +82,9 @@ class Commande{
         old.commandes.push(value)
         memory.setItem('commandes', JSON.stringify(old));
         this.commandes = JSON.parse(memory.getItem('commandes'))
+    }
+    search(term){
+        return this.commandes.commandes.filter(most_commande=>most_commande.modele.search(term)!=-1)
     }
     update(value, id){
         
@@ -391,3 +397,37 @@ document.modify_client.addEventListener('submit', function(e){
         
     })
 }
+let client_container = null;
+let commande_container = null;
+document.querySelector('#research').addEventListener('input', function(e){
+    e.preventDefault();
+    if(client_container==null){
+         client_container = document.querySelector('.search-client').childNodes[1].cloneNode(true)
+         commande_container = document.querySelector('.search-commande').childNodes[1].cloneNode(true)
+    }
+    
+   
+    
+    let client_get = clients.search(this.value);
+    let commande_get = commandes.search(this.value);
+    document.querySelector('.search-client').innerHTML = '';
+    document.querySelector('.search-commande').innerHTML = '';
+    for(let i=0; i<client_get.length; i++){
+        let c_client = client_container.cloneNode(true);
+        c_client.setAttribute('href', 'client.html?id='+i)
+        c_client.getElementsByTagName('h3')[0].textContent = client_get[i].nom;
+        
+    document.querySelector('.search-client').appendChild(c_client)
+    }
+    for(let i=0; i<commande_get.length; i++){
+        let c_commande = commande_container.cloneNode(true);
+        c_commande.setAttribute('href', 'commande.html?id='+i)
+        console.log(commande_get)
+        c_commande.getElementsByTagName('h3')[0].textContent = commande_get[i].modele;
+        
+    document.querySelector('.search-commande').appendChild(c_commande)
+    }
+    
+    
+
+})
