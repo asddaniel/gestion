@@ -1,7 +1,8 @@
 'use strict';
-
+const container_client_const = document.add_commande.client.childNodes[1].cloneNode(true);
 const memory = window.localStorage;
 let global_commande = []
+const client_id = window.location.href.split('?')[1].split('=')[1];
 class Client{
     constructor(){
         this.vue_client = document.getElementById('client-tab').childNodes[1].cloneNode(true);
@@ -56,7 +57,7 @@ class Client{
     }
     addview(){
         // let element = document.getElementById('client-tab').childNodes[1].cloneNode(true)
-        let id = window.location.href.split('?')[1].split('=')[1];
+        let id = client_id;
         document.getElementById('client-tab').parentNode.innerHTML="";
           console.log(this.clients.clients.length)
         document.querySelector('.client-numero').textContent = this.get(id).telephone;
@@ -167,15 +168,42 @@ function parse_commande(id){
     form_commande.id_commande.value = id;
     form_commande.id_commande.setAttribute('created_at', commande.created_at);
 }
-function parse_client(){
-    let container_client = document.add_commande.client.childNodes[1].cloneNode(true);
-    document.add_commande.client.innerHTML = "";
+function parse_client(form, target){
+    let container_client = container_client_const.cloneNode(true);
+    if(form=='add'){
+        document.add_commande.client.innerHTML = "";
+        
+    }else{
+        document.modify_commande.client.innerHTML = "";
+       
+    }
+
     
-    for(let i=0; i<clients.clients.clients.length; i++){
+    for(let i=clients.clients.clients.length-1; i>=0; i--){
+        console.log(target)
         container_client = container_client.cloneNode(true);
         container_client.value = i;
         container_client.textContent = clients.clients.clients[i].nom;
-        document.add_commande.client.appendChild(container_client)
+        if(target!=null){
+            if(target==i){
+                console.log(target)
+                container_client.setAttribute('selected', 'selected')
+            }
+        }else if(target===null && client_id==i){
+            container_client.setAttribute('selected', 'selected')
+        }
+        if(form=='add'){
+            
+            document.add_commande.client.appendChild(container_client) 
+            document.add_commande.client.previousElementSibling.classList.add('hidden')  
+            document.add_commande.client.classList.add('hidden')  
+        }else{
+            
+            document.modify_commande.client.appendChild(container_client)
+            document.modify_commande.client.previousElementSibling.classList.add('hidden')  
+            document.modify_commande.client.classList.add('hidden')  
+        }
+        
 
     }
     console.log(container_client)
@@ -198,76 +226,9 @@ commandes.addview()
 //alert(JSON.parse(clients))
 
 
-if(document.add_client){
-    document.add_client.addEventListener('submit', function(e){
-        e.preventDefault();
-        console.log(this.elements)
-        let client={};
-        for(let i=0; i<this.elements.length; i++){
-            if(this.elements[i].type!='submit'){
-                let named = this.elements[i].name
-                console.log(this.elements[named])
-               client[this.elements[i].name]=this.elements[named].value;
-            }
-            
-        }
-        clients.add(client)
-       let reussite =  new Promise(function(resolve, reject){
-        Swal.fire(
-            'Effectué',
-            'Client enregistré!',
-            'success');
-            setTimeout(function(){
-                resolve();
-            }, 2000)
-            
 
-          
-          })
-          reussite.then(function(e){
-            window.location.reload()
-          })
-       
-        
-    })
+ 
 // update 
-
-document.modify_client.addEventListener('submit', function(e){
-    e.preventDefault();
-    console.log(this.elements)
-    let client={};
-    for(let i=0; i<this.elements.length; i++){
-        if(this.elements[i].type!='submit' && this.elements[i].name!='id'){
-            let named = this.elements[i].name
-            console.log(this.elements[named])
-           client[this.elements[i].name]=this.elements[named].value;
-        }
-        
-    }
-    clients.update(client, this.id.value)
-   let reussite =  new Promise(function(resolve, reject){
-    Swal.fire(
-        'Effectué',
-        'Client modifié!',
-        'success');
-        setTimeout(function(){
-            resolve();
-        }, 2000)
-        
-
-      
-      })
-      reussite.then(function(e){
-        window.location.reload()
-      })
-   
-    
-})
-
-
-
-
-
     let action_delete = document.querySelectorAll('.action-delete');
     for(let i=0; i<action_delete.length; i++){
         action_delete[i].addEventListener('click', function(e){
@@ -400,7 +361,7 @@ document.modify_client.addEventListener('submit', function(e){
        
         
     })
-}
+
 let client_container = null;
 let commande_container = null;
 document.querySelector('#research').addEventListener('input', function(e){

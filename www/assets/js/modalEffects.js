@@ -47,10 +47,10 @@ var ModalEffects = (function() {
 				}
 				if(this.hasAttribute('data-id-update-commande')){
 					parse_commande(this.getAttribute('data-id-update-commande'));
-					parse_client('update');
+					parse_client('update', this.getAttribute('data-id-update-commande'));
 				}
 				if(this.getAttribute('action')=="add-commande"){
-					parse_client('add');
+					parse_client('add', null);
 				}
 				
 

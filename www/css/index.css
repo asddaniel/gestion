@@ -48,6 +48,15 @@ body {
     max-height: 96vh!important;
     overflow-y: scroll!important;
 }
+.hidden{
+    display: none;
+}
+.link-inherit{
+    color: inherit;
+}
+.link-inherit:hover{
+    background-color: inherit;
+}
 @media screen and (max-width: 1200px) {
  .plein-ecran{
     min-width: 85vw!important;

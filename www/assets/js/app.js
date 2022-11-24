@@ -1,4 +1,5 @@
 const memory = window.localStorage;
+const container_client_const = document.add_commande.client.childNodes[1].cloneNode(true);
 class Client{
     constructor(){
         this.vue_client = document.getElementById('client-tab').childNodes[1].cloneNode(true);
@@ -54,14 +55,15 @@ class Client{
     addview(){
         // let element = document.getElementById('client-tab').childNodes[1].cloneNode(true)
         document.getElementById('client-tab').innerHTML="";
-          console.log(this.clients.clients.length)
+         
         for(let i=this.clients.clients.length-1; i>=0; i--){
-            console.log(this.clients.clients[i])
+            
             let news = this.vue_client.cloneNode(true);
             news.childNodes[1].textContent = (i+1)+'. '+this.clients.clients[i].nom;
             news.childNodes[3].textContent = ''+this.clients.clients[i].genre;
             news.childNodes[5].textContent = ''+this.clients.clients[i].telephone;
-            console.log(news.childNodes[9].childNodes)
+            
+            news.childNodes[7].childNodes[0].childNodes[0].href = 'client.html?id='+i;
             news.childNodes[9].childNodes[0].setAttribute('data-id', i);
             news.childNodes[11].childNodes[0].setAttribute('data-id-update', i);
             //console.log(news.childNodes[7].innerHTML)
@@ -118,7 +120,7 @@ class Commande{
                 all.push(this.commandes.commandes[i]);
             }
         }
-        console.log(all)
+        
         memory.setItem('commandes', JSON.stringify({'commandes': all}));
         this.clients = JSON.parse(memory.getItem('commandes'))
 
@@ -135,7 +137,7 @@ class Commande{
            news.childNodes[1].childNodes[0].childNodes[0].src = 'img/'+this.commandes.commandes[i].categorie+'.jpg';
             news.childNodes[5].textContent = ''+this.commandes.commandes[i].modele;
             news.childNodes[7].textContent = ''+this.commandes.commandes[i].piece;
-             console.log(this.commandes.commandes[i])
+             
             news.childNodes[9].childNodes[0].textContent = ''+this.commandes.commandes[i].status;
             news.childNodes[11].childNodes[0].textContent = ''+this.commandes.commandes[i].created_at;
             news.childNodes[13].childNodes[0].textContent = ''+this.commandes.commandes[i].livraison.split('-').reverse().join('-');
@@ -145,7 +147,7 @@ class Commande{
             news.childNodes[21].childNodes[0].setAttribute('data-id-update-commande', i);
             //console.log(news.childNodes[7].innerHTML)
             document.getElementById('commande-tab').appendChild(news)
-            console.log(news)
+            
         }
         
     }
@@ -163,17 +165,33 @@ function parse_commande(id){
     form_commande.id_commande.value = id;
     form_commande.id_commande.setAttribute('created_at', commande.created_at);
 }
-function parse_client(form){
-    let container_client = document.add_commande.client.childNodes[1].cloneNode(true);
-    document.add_commande.client.innerHTML = "";
+function parse_client(form, target){
+    let container_client = container_client_const.cloneNode(true);
+    if(form=='add'){
+        document.add_commande.client.innerHTML = "";
+        
+    }else{
+        document.modify_commande.client.innerHTML = "";
+       
+    }
+
     
-    for(let i=0; i<clients.clients.clients.length; i++){
+    for(let i=clients.clients.clients.length-1; i>=0; i--){
+        console.log(clients.clients.clients[i])
         container_client = container_client.cloneNode(true);
         container_client.value = i;
         container_client.textContent = clients.clients.clients[i].nom;
+        if(target!=null){
+            if(target==i){
+                console.log(target)
+                container_client.setAttribute('selected', 'selected')
+            }
+        }
         if(form=='add'){
+            
             document.add_commande.client.appendChild(container_client)   
         }else{
+            
             document.modify_commande.client.appendChild(container_client)
         }
         
