@@ -206,7 +206,7 @@
                                                 </li>
                                                 <li class="breadcrumb-item"><a href="#!">Pages</a>
                                                 </li>
-                                                <li class="breadcrumb-item"><a href="#!">Dashboard</a>
+                                                <li class="breadcrumb-item"><a href="#!">Client</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -316,7 +316,7 @@
                                                                         <th>Libelle</th>
                                                                         <th>Modeles</th>
                                                                         <th>pieces</th>
-                                                                        <th>Status de paiement</th>
+                                                                        <th>Status et paiement</th>
                                                                         <th>Arrivée</th>
                                                                         <th>Date de Livraison</th>
                                                                         <th>Prix</th>
@@ -397,6 +397,7 @@
                                         <option value="cash">Payé en cash</option>
                                         <option value="partie">Payé en partie</option>
                                         <option value="aucune">payement pour plus tard</option>
+                                        <option value="livrée">payement et livrée</option>
                                         
                                     </select>
                                 </div>
@@ -554,6 +555,7 @@
                                         <option value="cash">Payé en cash</option>
                                         <option value="partie">Payé en partie</option>
                                         <option value="aucune">payement pour plus tard</option>
+                                        <option value="livrée">Payé et livrée</option>
                                         
                                     </select>
                                 </div>
@@ -624,6 +626,7 @@
 
 
 <!-- Required Jqurey -->
+<script src="js/jspdf.umd.min.js"></script>
 <script type="text/javascript" src="bower_components/jquery/js/jquery.min.js"></script>
 <script src="bower_components/jquery-ui/js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="bower_components/popper.js/js/popper.min.js"></script>
@@ -681,6 +684,7 @@
 <script type="text/javascript" src="assets/js/modalEffects.js"></script>
 <script type="text/javascript" src="assets/js/classie.js"></script>
         
+
       
     </body>
 </html>

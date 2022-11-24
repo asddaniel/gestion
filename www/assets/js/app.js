@@ -142,9 +142,10 @@ class Commande{
             news.childNodes[11].childNodes[0].textContent = ''+this.commandes.commandes[i].created_at;
             news.childNodes[13].childNodes[0].textContent = ''+this.commandes.commandes[i].livraison.split('-').reverse().join('-');
             news.childNodes[15].childNodes[0].textContent = ''+this.commandes.commandes[i].prix+' FC';
-            news.childNodes[17].childNodes[0].setAttribute('data-id-commande', i);
-            news.childNodes[19].childNodes[0].setAttribute('data-id-delete', i);
-            news.childNodes[21].childNodes[0].setAttribute('data-id-update-commande', i);
+            news.childNodes[17].childNodes[0].textContent = ''+clients.get(this.commandes.commandes[i].client).nom
+            news.childNodes[19].childNodes[0].setAttribute('data-id-commande', i);
+            news.childNodes[21].childNodes[0].setAttribute('data-id-delete', i);
+            news.childNodes[23].childNodes[0].setAttribute('data-id-update-commande', i);
             //console.log(news.childNodes[7].innerHTML)
             document.getElementById('commande-tab').appendChild(news)
             
