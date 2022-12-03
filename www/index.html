@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="assets/icon/themify-icons/themify-icons.css">
         <!-- ico font -->
           <!-- Date-Dropper css -->
-      <link rel="stylesheet" type="text/css" href="bower_components/datedropper/css/datedropper.min.css">
+        <link rel="stylesheet" type="text/css" href="bower_components/datedropper/css/datedropper.min.css">
         <link rel="stylesheet" type="text/css" href="assets/icon/icofont/css/icofont.css">
         <!-- flag icon framework css -->
         <link rel="stylesheet" type="text/css" href="assets/pages/flag-icon/flag-icon.min.css">
@@ -353,6 +353,49 @@
                                             <!-- Reset Order End -->
                                         </div>
                                             </div>
+
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h5>Dépenses</h5>
+                                                    <button class="btn btn-primary waves-effect md-trigger" action="add-depense" data-modal="modal-btn-depense">Ajouter une dépense</button>
+                                                    <div class="card-header-right">
+                                                        <i class="icofont icofont-rounded-down"></i>
+                                                        <i class="icofont icofont-refresh"></i>
+                                                        <i class="icofont icofont-close-circled"></i>
+                                                    </div>
+                                                </div>
+                                               
+                                                    <!-- Product table Start -->
+                                        
+                                           
+                                               
+                                                <div class="card-block product-table">
+                                                    <div class="table-responsive">
+                                                        <table class="table">
+                                                            <thead>
+                                                                <tr class="text-uppercase">
+                                                                    <th>Dates</th>
+                                                                    <th>nombres des dépenses</th>
+                                                                    <th>montant total</th>
+                                                                    <th></th>
+                                                                    
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody id="depense-tab">
+                                                                <tr>
+                                                                    <td>15/12/2022</td>
+                                                                    <td>6</td>
+                                                                    <td>185000</td>
+                                                                    <td><button class="btn btn-primary">voir</button></td>
+                                                                 </tr>
+                                                                
+                                                               
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                       </div>
 
                                             <div class="card">
                                                 <div class="card-header">
@@ -734,6 +777,53 @@
         </div>
     </div>
 
+    <div class="md-modal md-effect-10 container plein-ecran" id="modal-btn-depense">
+        <div class="md-content mi-sombre">
+            <h3 class="bg-primary">Ajouter une dépense</h3>
+            <div>
+              
+                <ul>
+                    <form name="add_depense">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div>
+                                    <label class="form-control-label">Nom Du beneficiaire</label>
+                                    <input type="text" name="nom" class="form-control" placeholder="Entrer le nom du beneficiaire" required>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            
+                            <div class="col-sm-12">
+                                <div>
+                                <label class="form-control-label">Motif</label>
+                                <input type="text" placeholder="motif" class="form-control">
+                            </div>
+                                
+                                <span class="messages"></span>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div>
+                                    <label class="form-control-label">montant</label>
+                                    <!-- <input type="text" class="form-control us_telephone" > -->
+                                    <input type="text" name="montant" class="form-control autonumber" data-a-sep="." data-a-dec="," placeholder="Entrer le montant" required>
+                                </div>
+                            </div>
+                        </div>
+                     <div class="flex">
+      <button class="btn btn-primary waves-effect md-close">Enregistrer</button>
+      <div type="button" class="btn btn-primary waves-effect md-fermer">Fermer</div>  </div>        
+                    </form>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+
 
 <!-- Required Jqurey -->
 <script type="text/javascript" src="bower_components/jquery/js/jquery.min.js"></script>
@@ -786,6 +876,7 @@
 <script  src="bower_components/datedropper/js/datedropper.min.js"></script>
 
         <script src="js/sweetalert2.all.min.js"></script>
+        <script src="assets/js/model.js"></script>
         <script src="assets/js/app.js"></script>
         <!-- Custom js -->
 <script type="text/javascript" src="assets/pages/dashboard/custom-dashboard.js"></script>
