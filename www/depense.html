@@ -245,9 +245,10 @@
                                                         <table class="table">
                                                             <thead>
                                                                 <tr class="text-uppercase">
-                                                                    <th>Dates</th>
-                                                                    <th>nombres des dépenses</th>
-                                                                    <th>montant total</th>
+                                                                    <th>Date</th>
+                                                                    <th>Béneficiaire</th>
+                                                                    <th>Motif</th>
+                                                                    <th>montant</th>
                                                                     <th></th>
                                                                     
                                                                 </tr>
@@ -257,7 +258,11 @@
                                                                     <td>15/12/2022</td>
                                                                     <td>6</td>
                                                                     <td>185000</td>
-                                                                    <td><button class="btn btn-primary">voir</button></td>
+                                                                    <td></td>
+                                                                    <td><button class="btn btn-primary waves-effect md-trigger" action="modify-depense-1" data-modal="modal-btn-depense-1">modifier</button></td>
+                                                                    
+                                                                    <td><button class="btn btn-primary">supprimer</button></td>
+                                                                    <div class="md-overlay"></div>
                                                                  </tr>
                                                                 
                                                                
@@ -311,7 +316,7 @@
                             <div class="col-sm-12">
                                 <div>
                                 <label class="form-control-label">Motif</label>
-                                <input type="text" placeholder="motif" class="form-control">
+                                <input type="text" placeholder="motif" name="motif" class="form-control">
                             </div>
                                 
                                 <span class="messages"></span>
@@ -321,6 +326,54 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div>
+                                    <label class="form-control-label">montant</label>
+                                    <!-- <input type="text" class="form-control us_telephone" > -->
+                                    <input type="text" name="montant" class="form-control autonumber" data-a-sep="." data-a-dec="," placeholder="Entrer le montant" required>
+                                </div>
+                            </div>
+                        </div>
+                     <div class="flex">
+      <button class="btn btn-primary waves-effect md-close">Enregistrer</button>
+      <div type="button" class="btn btn-primary waves-effect md-fermer">Fermer</div>  </div>        
+                    </form>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="md-modal md-effect-10 container plein-ecran" id="modal-btn-depense-1">
+        <div class="md-content mi-sombre">
+            <h3 class="bg-primary">Modifier  dépense</h3>
+            <div>
+              
+                <ul>
+                    <form name="modify_depense">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div>
+                                    <label class="form-control-label">Nom Du beneficiaire</label>
+                                    <input type="text" name="nom" class="form-control" placeholder="Entrer le nom du beneficiaire" required>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            
+                            <div class="col-sm-12">
+                                <div>
+                                <label class="form-control-label">Motif</label>
+                                <input type="text" placeholder="motif" name="motif" class="form-control">
+                            </div>
+                                
+                                <span class="messages"></span>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div>
+                                    <input type="hidden" name="created_at" value="">
                                     <label class="form-control-label">montant</label>
                                     <!-- <input type="text" class="form-control us_telephone" > -->
                                     <input type="text" name="montant" class="form-control autonumber" data-a-sep="." data-a-dec="," placeholder="Entrer le montant" required>

@@ -7,6 +7,12 @@ function mini_date(date){
     let annee = date.getFullYear()
     return jour+'/'+mois+'/'+annee
 }
+function format_heure(date){
+    let heure = date.getHours()
+    let minutes = date.getMinutes()
+    let seconde = date.getSeconds()
+    return heure+'h'+minutes+':'+seconde
+}
 
 class Client{
     constructor(){
@@ -197,6 +203,9 @@ class Depense{
 
         
     }
+    get_by_date(date){
+        return this.depenses.depenses.filter(e=>e.created_at==date)[0]
+    }
     get(id){
         for(let i=0; i<this.depenses.depenses.length; i++){
             if(parseInt(id)==i){
@@ -218,14 +227,44 @@ class Depense{
         }
         
         memory.setItem('depenses', JSON.stringify({'depenses': all}));
-        this.clients = JSON.parse(memory.getItem('depenses'))
+        this.depenses = JSON.parse(memory.getItem('depenses'))
 
 
+    }
+    delete(date){
+        let old = this.depenses.depenses.filter(d=>d.created_at!=parseInt(date))
+        memory.setItem('depenses', JSON.stringify({'depenses': old}));
+        this.depenses = JSON.parse(memory.getItem('depenses'))
+        console.log(old)
     }
     addview(){
         let element = document.getElementById('depense-tab').childNodes[1].cloneNode(true)
         document.getElementById('depense-tab').innerHTML="";
         let doc = document.getElementById('depense-tab')
+
+        if(arguments.length>0){
+           let  all = this.depenses.depenses.filter(element=>mini_date(new Date(parseInt(arguments[0])))==mini_date(new Date(element.created_at)))
+            // console.log(mini_date(new Date(parseInt(arguments[0]))))
+            // console.log(this.depenses.depenses.filter(element=>mini_date(new Date(element.created_at))==mini_date(new Date(parseInt(arguments[0])))))
+            // console.log(all)
+
+            for(let i=all.length-1; i>=0; i--){
+                let el = element.cloneNode(true);
+                
+                el.childNodes[1].textContent =format_heure(new Date(all[i].created_at))
+                el.childNodes[3].textContent = all[i].nom
+                el.childNodes[5].textContent = all[i].motif
+                el.childNodes[7].textContent = all[i].montant
+                el.childNodes[11].childNodes[0].setAttribute("action-delete", all[i].created_at)
+                
+                el.childNodes[9].childNodes[0].setAttribute("identifiant", all[i].created_at)
+                // el.childNodes[1].textContent = mini_date(new Date(order_day.date[i]))
+    
+                 doc.appendChild(el)
+            }
+
+        }else{
+       
         
         let order_day = {date:[], data:[]}
         this.depenses.depenses.forEach((data)=>{
@@ -257,7 +296,7 @@ class Depense{
         
      
         
-    }
+    } }
     
 }
 
@@ -314,6 +353,14 @@ function parse_commande(id){
  return memory.getItem(key);
  }
 
-function parse_depense(categorie){
-
+function parse_depense(categorie, date){
+    if(categorie=="modify"){
+        let depense = depenses.get_by_date(date);
+        console.log(depense)
+        document.modify_depense.nom.value=depense.nom;
+        document.modify_depense.motif.value = depense.motif??""
+        document.modify_depense.montant.value = depense.montant
+        document.modify_depense.created_at.value = date
+        
+    }
 }

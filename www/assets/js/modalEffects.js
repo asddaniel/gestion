@@ -33,10 +33,12 @@ var ModalEffects = (function() {
 			}
 
 			el.addEventListener( 'click', function( ev ) {
+				
 				classie.add( modal, 'md-show' );
 				document.querySelector('.pcoded-main-container').classList.toggle('blur')
 				overlay.removeEventListener( 'click', removeModalHandler );
 				overlay.addEventListener( 'click', removeModalHandler );
+				console.log(this.getAttribute("action"))
 				if(this.hasAttribute('data-id-update')){
 					data_client = clients.get(this.getAttribute('data-id-update'))
 					
@@ -56,6 +58,10 @@ var ModalEffects = (function() {
 				}
 				if(this.getAttribute("action")=="add-depense"){
 					parse_depense("add");
+				}
+				if(this.getAttribute("action")=="modify-depense-1"){
+					
+					parse_depense("modify", this.getAttribute("identifiant"));
 				}
 				
 
