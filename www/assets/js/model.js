@@ -232,18 +232,20 @@ class Depense{
             // console.log(mini_date(new Date(data.created_at)))
             if(!order_day.date.some(element =>mini_date(new Date(element))==mini_date(new Date(data.created_at)))){
                 order_day.date.push(data.created_at)
-            }
+                console.log(data)
+            }else{}
             try {
-                order_day.data[order_day.date.findIndex(element=>mini_date(new Date(element==data.created_at)))].push(data)
+                order_day.data[order_day.date.findIndex(element=>mini_date(new Date(element))==mini_date(new Date(data.created_at)))].push(data)
             } catch (error) {
+              
                 order_day.data[order_day.date.findIndex(element=>mini_date(new Date(element))==mini_date(new Date(data.created_at)))] = [data];  
             }   
            
         })
         console.log(order_day)
-        for(let i=0; i<order_day.date.length; i++){
+        for(let i=order_day.date.length-1; i>=0; i--){
             let el = element.cloneNode(true);
-            // console.log(order_day.data)
+            
             el.childNodes[5].textContent = order_day.data[i].reduce((e1, e2)=>e1+parseInt(e2.montant.replace(",", "").replace(".", ""))/100, 0) +" FC"
             el.childNodes[3].textContent = order_day.data[i].length
             console.log(order_day.date)
