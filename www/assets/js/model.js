@@ -145,13 +145,14 @@ class Commande{
         document.getElementById('commande-tab').innerHTML="";
           //console.log(this.clients.clients.length)
         for(let i=this.commandes.commandes.length-1; i>=0; i--){
-            //console.log(this.clients.clients[i])
+         
             let news = this.vue_commande.cloneNode(true);
-           
+            // console.log(news.childNodes[19].childNodes[0].childNodes[1])
+            news.childNodes[19].childNodes[0].childNodes[1].href = "commande.html?id="+i;
            news.childNodes[1].childNodes[0].childNodes[0].src = 'img/'+this.commandes.commandes[i].categorie+'.jpg';
             news.childNodes[5].textContent = ''+this.commandes.commandes[i].modele;
             news.childNodes[7].textContent = ''+this.commandes.commandes[i].piece;
-             
+            
             news.childNodes[9].childNodes[0].textContent = ''+this.commandes.commandes[i].status;
             news.childNodes[11].childNodes[0].textContent = ''+this.commandes.commandes[i].created_at;
             news.childNodes[13].childNodes[0].textContent = ''+this.commandes.commandes[i].livraison.split('-').reverse().join('-');
@@ -160,7 +161,7 @@ class Commande{
             news.childNodes[19].childNodes[0].setAttribute('data-id-commande', i);
             news.childNodes[21].childNodes[0].setAttribute('data-id-delete', i);
             news.childNodes[23].childNodes[0].setAttribute('data-id-update-commande', i);
-            //console.log(news.childNodes[7].innerHTML)
+            
             document.getElementById('commande-tab').appendChild(news)
             
         }
