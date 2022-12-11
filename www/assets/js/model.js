@@ -16,7 +16,7 @@ function format_heure(date){
 
 class Client{
     constructor(){
-        this.vue_client = document.getElementById('client-tab').childNodes[1].cloneNode(true);
+        this.vue_client = (document.getElementById('client-tab')?.childNodes[1]?.cloneNode(true)) ?? null;
         this.clients =  memory.getItem('clients')!=null ? JSON.parse(memory.getItem('clients')): JSON.parse(init_memory('clients', JSON.stringify({'clients':[]})));
     }
     add(value){
@@ -147,7 +147,7 @@ class Commande{
         for(let i=this.commandes.commandes.length-1; i>=0; i--){
          
             let news = this.vue_commande.cloneNode(true);
-            // console.log(news.childNodes[19].childNodes[0].childNodes[1])
+             console.log(news.childNodes[19].childNodes[0].childNodes[1])
             news.childNodes[19].childNodes[0].childNodes[1].href = "commande.html?id="+i;
            news.childNodes[1].childNodes[0].childNodes[0].src = 'img/'+this.commandes.commandes[i].categorie+'.jpg';
             news.childNodes[5].textContent = ''+this.commandes.commandes[i].modele;

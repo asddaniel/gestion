@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+      
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+        <!-- themify icon -->
+        <link rel="stylesheet" type="text/css" href="assets/icon/themify-icons/themify-icons.css">
+        <!-- ico font -->
+          <!-- Date-Dropper css -->
+        <link rel="stylesheet" type="text/css" href="bower_components/datedropper/css/datedropper.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/icon/icofont/css/icofont.css">
+        <!-- flag icon framework css -->
+        <link rel="stylesheet" type="text/css" href="assets/pages/flag-icon/flag-icon.min.css">
+        <!--SVG Icons Animated-->
+        <link rel="stylesheet" type="text/css" href="assets/icon/SVG-animated/svg-weather.css">
+        <!-- Menu-Search css -->
+        <link rel="stylesheet" type="text/css" href="assets/pages/menu-search/css/component.css">
+        <!-- Horizontal-Timeline css -->
+        <link rel="stylesheet" type="text/css" href="assets/pages/dashboard/horizontal-timeline/css/style.css">
+        <!-- amchart css -->
+        <link rel="stylesheet" type="text/css" href="assets/pages/dashboard/amchart/css/amchart.css">
+        <!-- Calender css -->
+        <link rel="stylesheet" type="text/css" href="assets/pages/widget/calender/pignose.calendar.min.css">
+        <!-- flag icon framework css -->
+        <link rel="stylesheet" type="text/css" href="assets/pages/flag-icon/flag-icon.min.css">
+        <link rel="stylesheet" href="css/sweetalert2.css">
+        <!-- Style.css -->
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <!--color css-->
+  
+  
+        <link rel="stylesheet" type="text/css" href="assets/css/linearicons.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/simple-line-icons.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/ionicons.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/jquery.mCustomScrollbar.css">
+          <!-- animation nifty modal window effects css -->
+      <link rel="stylesheet" type="text/css" href="assets/css/component.css">
+  
+        <link rel="stylesheet" href="css/index.css">
+        <title>Gestion</title>
+    </head>
+    <body>
+        
+
+
+
+            <!-- Pre-loader start -->
+    <div class="theme-loader">
+        <div class="ball-scale">
+            <div></div>
+        </div>
+    </div>
+    <!-- Pre-loader end -->
+    <!-- Menu header start -->
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+            <nav class="navbar header-navbar pcoded-header">
+                <div class="navbar-wrapper">
+                    <div class="navbar-logo" data-navbar-theme="theme4">
+                        <a class="mobile-menu" id="mobile-collapse" href="#!">
+                            <i class="ti-menu"></i>
+                        </a>
+                        <a class="mobile-search morphsearch-search" href="#">
+                            <i class="ti-search"></i>
+                        </a>
+                        <a href="index.html">
+                           
+                        </a>
+                        <a class="mobile-options">
+                            <i class="ti-more"></i>
+                        </a>
+                    </div>
+                    <div class="navbar-container container-fluid">
+                        <div>
+                            <ul class="nav-left">
+                                <li>
+                                    <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a></div>
+                                </li>
+                                <li>
+                                    <a class="main-search morphsearch-search" href="#">
+                                        <!-- themify icon -->
+                                        <i class="ti-search"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#!" onclick="javascript:toggleFullScreen()">
+                                        <i class="ti-fullscreen"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    
+                                    
+                                </li>
+                               
+                            </ul>
+                            <ul class="nav-right">
+                              
+                                
+                            </ul>
+                            <!-- search -->
+                            <div id="morphsearch" class="morphsearch">
+                                <form class="morphsearch-form">
+                                    <input class="morphsearch-input" name="research" id="research" type="search" placeholder="Search...">
+                                    <button class="morphsearch-submit" type="submit">Search</button>
+                                </form>
+                                <div class="morphsearch-content">
+                                    <div class="dummy-column">
+                                        <h2>Clients</h2>
+                                       <div class="search-client">
+                                            <a class="dummy-media-object" href="#!">
+                                                <img class="round" src="assets/images/avatar-1.png" alt="Shaun Dona">
+                                                <h3>Shaun Dona</h3>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="dummy-column">
+                                        <h2>Commandes</h2>
+                                        <div class="search-commande">
+                                            <a class="dummy-media-object " href="#!">
+                                              
+                                                <h3>Page Preloading Effect</h3>
+                                            </a>
+                                        </div>
+                                        
+                                       
+                                    </div>
+                                    
+                                </div>
+                                <!-- /morphsearch-content -->
+                                <span class="morphsearch-close"><i class="icofont icofont-search-alt-1"></i></span>
+                            </div>
+                            <!-- search end -->
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+           
+           
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+                    <nav class="pcoded-navbar transitive">
+                        <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
+                        <div class="pcoded-inner-navbar main-menu">
+
+                            <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Navigation</div>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="pcoded-hasmenu active pcoded-trigger">
+                                    <a href="javascript:void(0)">
+                                        <span class="pcoded-micon"><i class="ti-home"></i></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class="active">
+                                            <a href="commandes.html">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.dash.default">Commande</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="clients.html">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.dash.ecommerce">Clients</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                      
+                                </li>
+                               
+                               
+                               
+                            </ul>
+                           
+                            
+                        </div>
+                    </nav>
+                    <div class="pcoded-content">
+                        <div class="pcoded-inner-content">
+                            <div class="main-body">
+                                <div class="page-wrapper">
+                                    <div class="page-header">
+                                        <div class="page-header-title">
+                                            <h4>Commandes</h4>
+                                        </div>
+                                        
+
+
+
+
+
+                                        <div class="page-header-breadcrumb">
+                                            <ul class="breadcrumb-title">
+                                                <li class="breadcrumb-item">
+                                                    <a href="index.html">
+                                                        <i class="icofont icofont-home"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="breadcrumb-item"><a href="#!">Pages</a>
+                                                </li>
+                                                <li class="breadcrumb-item"><a href="#!">Dashboard</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="page-body">                                         
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h5>COMMANDES</h5>
+                                                    <div class="card-header-right">
+                                                        <i class="icofont icofont-rounded-down"></i>
+                                                        <i class="icofont icofont-refresh"></i>
+                                                        <i class="icofont icofont-close-circled"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="card-block">
+                                                    <div class="card-block">
+                                                        
+                                                        <div class="md-overlay"></div>
+                                                    </div>
+                                            <!-- Reset Order Start -->
+                                            <div class="col-md-12">
+                                                <div class="card">
+                                                    <div class="card-block">
+                                                        <h5>Commandes</h5>
+                                                    </div>
+                                                    <div class="card-block reset-table p-t-0">
+                                                        <div class="table-responsive">
+                                                            <table class="table">
+                                                                <thead>
+                                                                    <tr class="text-uppercase">
+                                                                        <th>Image</th>
+                                                                        <th>Libelle</th>
+                                                                        <th>Modeles</th>
+                                                                        <th>pieces</th>
+                                                                        <th>Status de paiement</th>
+                                                                        <th>Arrivée</th>
+                                                                        <th>Date de Livraison</th>
+                                                                        <th>Prix</th>
+                                                                        <th>Client</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody id="commande-tab">
+                                                                    <tr>
+                                                                        <td><a href="#!"><img class="img-responsive" src="assets/images/widget/prod1.jpg" alt="chat-user"></a>
+                                                                        </td>
+                                                                        <td>-</td>
+                                                                        <td>Chemise W-3</td>
+                                                                        <td>Super Wax</td>
+                                                                        <td><button type="button" class="btn btn-success btn-round">Payé</button></td>
+                                                                        <td>27 Sep 2022</td>
+                                                                        <td>30/12/2022</td>
+                                                                        <td>$99.00</td>
+                                                                        <td>cccc</td>
+                                                                        <td><button type="button" class="btn btn-primary"> <a href="#"> voir</a></button></td>
+                                                                        <td><button type="button" class="btn btn-primary action-delete">Supprimer</button></td>
+                                                                        
+                                                                        <td><button type="button" class="btn btn-primary action-update waves-effect md-trigger" data-modal="modal-12" >modifier</button></td>
+                                                                    </tr>
+                                                                  
+                                                                   
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Reset Order End -->
+                                        </div>
+                                            </div>
+
+                                           
+                                       </div>
+
+                                           
+
+
+                                        
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+
+   
+
+  
+
+    <div class="md-modal md-effect-10 container plein-ecran scroll-y" id="modal-12">
+        <div class="md-content mi-sombre">
+            <h3 class="bg-primary">Modifier une commande</h3>
+            <div>
+              
+                <ul>
+                    <form name="modify_commande">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div>
+                                    <label class="form-control-label">Modèle</label>
+                                    <input type="text" name="modele" class="form-control" placeholder="Entrer le nom du modele" required>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div>
+                                    <label class="form-control-label">Pièce</label>
+                                    <input type="text" name="piece" class="form-control" placeholder="Entrer le nom de la piece reçu" required>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div>
+                                    <input type="hidden" name="id_commande">
+                                    <label class="form-control-label">status de paiement</label>
+                                    <select name="status" class="form-control form-control-primary">
+                                        <option value="cash">Payé en cash</option>
+                                        <option value="partie">Payé en partie</option>
+                                        <option value="aucune">payement pour plus tard</option>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div>
+                                    <label class="form-control-label">Date de Livraison</label>
+                                    <input id="dropper-lock" class="form-control" type="date" name="livraison" placeholder="Select your date" >
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div>
+                                    <label class="form-control-label">Client</label>
+                                    <select name="client" class="form-control form-control-primary">
+                                        
+                                       
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div>
+                                    <label class="form-control-label">Catégorie</label>
+                                    <select name="categorie" class="form-control form-control-primary">
+                                        <option value="broderie">broderie</option>
+                                        <option value="jupe">jupe</option>
+                                        <option value="pagne">pagne</option>
+                                        <option value="robe">Robe</option>
+                                        <option value="pantalon">pantalon</option>
+                                        <option value="culotte">culotte</option>
+                                        <option value="veste">veste</option>
+                                        <option value="autre">autre</option>
+                                       
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div>
+                                    <label class="form-control-label">Prix</label>
+                                    <input type="text" name="prix" placeholder="prix en fc" class="form-control autonumber" data-a-sep="." data-a-dec=",">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                     <div class="flex">
+      <button class="btn btn-primary waves-effect md-close">Enregistrer</button>
+      <div type="button" class="btn btn-primary waves-effect md-fermer">Fermer</div>  </div>        
+                    </form>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+
+   
+
+
+<!-- Required Jqurey -->
+<script type="text/javascript" src="bower_components/jquery/js/jquery.min.js"></script>
+<script src="bower_components/jquery-ui/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="bower_components/popper.js/js/popper.min.js"></script>
+<script type="text/javascript" src="bower_components/bootstrap/js/bootstrap.min.js"></script>
+<!-- jquery slimscroll js -->
+<script type="text/javascript" src="bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
+<!-- modernizr js -->
+<script type="text/javascript" src="bower_components/modernizr/js/modernizr.js"></script>
+<script type="text/javascript" src="bower_components/modernizr/js/css-scrollbars.js"></script>
+<!-- Calender js -->
+<script type="text/javascript" src="bower_components/moment/js/moment.min.js"></script>
+<script type="text/javascript" src="assets/pages/widget/calender/pignose.calendar.min.js"></script>
+<!-- classie js -->
+
+<script type="text/javascript" src="bower_components/classie/js/classie.js"></script>
+<!-- knob js -->
+<script src="assets/pages/chart/knob/jquery.knob.js"></script>
+<script type="text/javascript" src="assets/pages/widget/jquery.sparkline.js"></script>
+
+    <!-- Horizontal-Timeline js -->
+<script type="text/javascript" src="assets/pages/dashboard/horizontal-timeline/js/main.js"></script>
+
+<!-- i18next.min.js -->
+<script type="text/javascript" src="bower_components/i18next/js/i18next.min.js"></script>
+<script type="text/javascript" src="bower_components/i18next-xhr-backend/js/i18nextXHRBackend.min.js"></script>
+<script type="text/javascript" src="bower_components/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js"></script>
+<script type="text/javascript" src="bower_components/jquery-i18next/js/jquery-i18next.min.js"></script>
+
+<!-- pcmenu js -->
+<script src="assets/js/pcoded.min.js"></script>
+<script src="assets/js/demo-12.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/jquery.mousewheel.min.js"></script>
+
+
+
+
+
+
+
+        <script src="cordova.js"></script>
+        <script src="js/index.js"></script>
+        //form-mask
+        <script src="assets/pages/form-masking/form-mask.js"></script>
+        <script src="assets/pages/form-masking/inputmask.js"></script>
+<script src="assets/pages/form-masking/jquery.inputmask.js"></script>
+<script src="assets/pages/form-masking/autoNumeric.js"></script>
+<script  src="bower_components/datedropper/js/datedropper.min.js"></script>
+
+        <script src="js/sweetalert2.all.min.js"></script>
+        <script src="assets/js/model.js"></script>
+        <script src="assets/js/commande.js"></script>
+        <!-- Custom js -->
+<script type="text/javascript" src="assets/pages/dashboard/custom-dashboard.js"></script>
+<script type="text/javascript" src="assets/js/script.js"></script>
+<script type="text/javascript" src="assets/js/modalEffects.js"></script>
+<script type="text/javascript" src="assets/js/classie.js"></script>
+        
+      
+    </body>
+</html>
