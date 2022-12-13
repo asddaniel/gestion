@@ -13,11 +13,17 @@
   "author": "Apache Cordova Team",
   "license": "Apache-2.0",
   "devDependencies": {
-    "cordova-android": "^8.1.0"
+    "cordova-android": "^8.1.0",
+    "cordova-plugin-badge": "^0.8.8",
+    "cordova-plugin-device": "^2.1.0",
+    "cordova-plugin-local-notification": "^0.9.0-beta.2"
   },
   "cordova": {
     "platforms": [
       "android"
-    ]
+    ],
+    "plugins": {
+      "cordova-plugin-local-notification": {}
+    }
   }
 }

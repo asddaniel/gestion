@@ -23,7 +23,11 @@ document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
     // Cordova is now initialized. Have fun!
-
+    cordova.plugins.notification.local.schedule({
+        title: 'My first notification',
+        text: 'Thats pretty easy...',
+        foreground: true
+    });
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
     document.getElementById('deviceready').classList.add('ready');
 }
